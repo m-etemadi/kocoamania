@@ -1,0 +1,102 @@
+// About Us
+.about {
+  // Testimonials
+  &-testimonials {
+    background: $bg-cake repeat center center;
+
+    @include responsive(medium) {
+      background-attachment: fixed;
+    }
+
+    .quote {
+      p {
+        font-size: 2.4rem;
+        font-weight: map-get($font-weights, 'thin');
+
+        @include responsive(medium) {
+          font-size: 2.8rem;
+        }
+
+        @include responsive(large) {
+          font-size: 3.6rem;
+        }
+      }
+
+      .name {
+        color: $color-brown-light;
+        font-weight: map-get($font-weights, 'thin');
+        font-style: italic;
+      }
+    }
+  }
+
+  // About founder
+  &-founder {
+    background: $gradient-bg, $bg-about no-repeat center center/cover;
+
+    @include responsive(medium) {
+      background-attachment: fixed;
+    }
+
+    .container {
+      @include flex-center(center);
+      flex-direction: column;
+      row-gap: 4rem;
+
+      @include responsive(large) {
+        @include flex-center(space-between);
+        flex-direction: row;
+        column-gap: 5rem;
+        row-gap: 0;
+      }
+    }
+
+    // About image
+    &--image {
+      @include border-radius(50%);
+      flex: 0 0 $about-img-size;
+
+      img {
+        @include size($width: $about-img-size);
+        @include border-radius(50%);
+        object-fit: cover;
+      }
+    }
+
+    // About text
+    &--text {
+      position: relative;
+      padding: 3.5rem;
+      color: $color-white;
+      background: linear-gradient(
+        to bottom,
+        rgba($color-black-light, 1),
+        rgba($color-black-light, 0)
+      );
+      @include border-radius(2rem);
+
+      @include responsive(large) {
+        background: linear-gradient(
+          to right,
+          rgba($color-black-light, 1),
+          rgba($color-black-light, 0)
+        );
+      }
+
+      // About arrow left
+      &::after {
+        content: '';
+
+        @include responsive(large) {
+          @include position(
+            $position: absolute,
+            $left: -4.2rem,
+            $top: calc(50% - #{$about-text-arrow-size})
+          );
+
+          @include arrow($color-black-light, $about-text-arrow-size, left);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+// Home
+.home {
+  // Showcase
+  .showcase {
+    background: $gradient-bg, $bg-hero no-repeat center center/cover;
+    padding-top: $header-height;
+
+    @include responsive(medium) {
+      background-attachment: fixed;
+    }
+
+    .container {
+      @include flex-center(center);
+      flex-direction: column-reverse;
+      row-gap: 3rem;
+      min-height: 60vh;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+
+      @include responsive(large) {
+        @include flex-center(space-between);
+        flex-direction: row;
+        column-gap: 3rem;
+        row-gap: 0;
+      }
+    }
+
+    // Showcase hero
+    &-hero {
+      @include size(100%, $hero-img-height);
+      @include border-radius(2rem);
+      box-shadow: 0 0.1rem 4rem 1rem rgba($color-black-light, 0.85);
+      overflow: hidden;
+
+      @include responsive(small) {
+        @include size($hero-img-width, $hero-img-height);
+      }
+
+      img {
+        @include size(100%, $hero-img-height);
+        object-fit: cover;
+      }
+
+      &--slider {
+        .swiper-pagination-bullet {
+          background-color: transparent !important;
+          border: 0.2rem solid $color-red !important;
+          @include size(1.6rem !important);
+
+          &-active {
+            background-color: $color-red !important;
+          }
+        }
+      }
+    }
+
+    // Showcase title
+    &-title {
+      flex-grow: 1;
+
+      .cursor {
+        margin-left: 1rem;
+        font-weight: map-get($font-weights, 'thin');
+      }
+
+      .blinking {
+        animation: blinking 1.2s linear infinite;
+      }
+
+      @keyframes blinking {
+        0% {
+          opacity: 0;
+        }
+        49% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .btn {
+        width: 100%;
+
+        @include responsive(xsmall) {
+          width: max-content;
+        }
+      }
+    }
+  }
+
+  // Product carousel
+  .products-carousel {
+    background: $bg-cake repeat center center;
+
+    @include responsive(medium) {
+      background-attachment: fixed;
+    }
+
+    .carousel {
+      padding: 0 0.1rem;
+    }
+  }
+}

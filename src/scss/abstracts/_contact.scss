@@ -1,0 +1,48 @@
+// Contact us
+.contact {
+  background: $bg-contact no-repeat center center;
+
+  @include responsive(medium) {
+    background-attachment: fixed;
+  }
+
+  .top-row {
+    display: flex;
+    flex-direction: column;
+
+    @include responsive(large) {
+      @include flex-center(space-between);
+      flex-direction: row;
+    }
+  }
+
+  // Contact map
+  &-course-info {
+    background-color: rgba($color-red-light, 0.7);
+    @include border-radius(2.5rem);
+    padding: 3rem;
+    margin-bottom: 3rem;
+
+    @include responsive(large) {
+      flex: 0 0 70%;
+      margin-bottom: 0;
+      font-size: 2.22rem;
+    }
+  }
+
+  // Contact info
+  &-info {
+    & > *:not(:last-child) {
+      margin-bottom: 3rem;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    // Social icons
+    &--social-icons {
+      @include flex-center(center);
+    }
+  }
+}

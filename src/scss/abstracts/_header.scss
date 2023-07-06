@@ -1,0 +1,81 @@
+// Header
+.header {
+  @include position($position: fixed, $left: 0, $top: 0);
+  z-index: 8;
+  @include size($width: 100%, $height: $header-height);
+  background-color: $color-brown;
+  padding-top: 0.7rem;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba($color-black-light, 0.5);
+  @include transition(all, 0.3s);
+
+  @include responsive(medium) {
+    padding-top: 0;
+  }
+
+  .container {
+    @include flex-center(space-between);
+  }
+
+  // Logo
+  .logo {
+    img {
+      width: 21rem;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  // Main navigation
+  .main-nav {
+    display: none;
+
+    @include responsive(medium) {
+      display: block;
+    }
+
+    ul {
+      @include flex-center(center);
+
+      a {
+        color: $color-white;
+        padding: 2rem;
+      }
+    }
+  }
+
+  // Effect on scroll
+  &.scrolled-down {
+    background-color: $color-white;
+
+    .hamburger {
+      .line {
+        background-color: $color-black;
+
+        &::before,
+        &::after {
+          background-color: $color-black;
+        }
+      }
+    }
+
+    .logo {
+      img {
+        filter: brightness(1) invert(0);
+      }
+    }
+
+    .main-nav {
+      a {
+        color: inherit;
+
+        &:hover,
+        &.active {
+          color: $color-white;
+        }
+
+        @include responsive(large) {
+          padding: 2rem 2.5rem;
+        }
+      }
+    }
+  }
+}

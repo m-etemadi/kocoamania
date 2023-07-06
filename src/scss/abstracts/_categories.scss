@@ -1,0 +1,106 @@
+// categories
+.categories {
+  background: $gradient-bg, $bg-categories no-repeat center center/cover;
+
+  @include responsive(medium) {
+    background-attachment: fixed;
+  }
+
+  .container {
+    @include flex-center(center);
+    flex-wrap: wrap;
+    gap: $card-gap;
+  }
+
+  .card {
+    overflow: hidden;
+    position: relative;
+    flex: 0 0 100%;
+    height: 20rem;
+    @include border-radius(2.5rem);
+
+    @include responsive(small) {
+      flex: 0 0
+        calc(calc(100% / 2) - calc(#{$card-gap} - calc(#{$card-gap} / 2)));
+    }
+
+    @include responsive(medium) {
+      flex: 0 0
+        calc(calc(100% / 3) - calc(#{$card-gap} - calc(#{$card-gap} / 3)));
+    }
+
+    @include responsive(large) {
+      flex: 0 0
+        calc(calc(100% / 4) - calc(#{$card-gap} - calc(#{$card-gap} / 4)));
+    }
+
+    &-red {
+      .card-image {
+        &::after {
+          background-color: rgba($color-red, $card-opacity);
+        }
+      }
+    }
+
+    &-light-red {
+      .card-image {
+        &::after {
+          background-color: rgba($color-red-light, $card-opacity);
+        }
+      }
+    }
+
+    &-light-brown {
+      .card-image {
+        &::after {
+          background-color: rgba($color-brown-light, $card-opacity);
+        }
+      }
+    }
+
+    &-light-grey {
+      .card-image {
+        &::after {
+          background-color: rgba($color-grey-light, $card-opacity);
+        }
+      }
+    }
+
+    &-image {
+      @include size(100%);
+      position: relative;
+
+      img {
+        @include position($position: absolute, $left: 0, $top: 0);
+        @include size(100%);
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      &::after {
+        content: '';
+        @include position($position: absolute, $left: 0, $top: 0);
+        @include size(100%);
+        z-index: 1;
+      }
+    }
+
+    a {
+      @include flex-center(center);
+      @include position($position: absolute, $left: 0, $top: 0);
+      @include size(100%);
+      z-index: 2;
+      @include transition(all, 0.25s);
+      color: $color-white;
+      @include font($face: $font-tertiary);
+      transform: scale(2);
+      font-weight: map-get($font-weights, 'black');
+      text-shadow: 0.2rem 0.2rem 0.5rem rgba($color-black, 0.6);
+
+      &:hover {
+        @include font($face: $font-tertiary);
+        transform: scale(2.8);
+      }
+    }
+  }
+}

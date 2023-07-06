@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Kocoamania, where taste meets art" />
+    <meta name="keywords" content="Cake shop, Kocoamania, Confectionery" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="dist/img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="dist/img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="dist/img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="dist/img/favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <title>Kocoa Mania</title>
+  </head>
+
+  <body>
+    <!-- Loader -->
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Popup -->
+    <div class="overlay popup-hidden">
+      <div class="popup">
+        <a href="#" class="popup-close" title="Close">&times;</a>
+        <h4 class="heading heading-tertiary text-red">
+          Privacy Policy for Kocoa Mania
+        </h4>
+
+        <!-- Popup text -->
+        <article class="popup-text">
+          <p>
+            Effective date: [Insert Date] <br />
+            At Kocoa Mania, we respect your privacy and are committed to
+            maintaining the confidentiality of your personal information. This
+            Privacy Policy outlines our practices regarding the collection, use,
+            and disclosure of information on our website, which does not use
+            cookies and does not collect any personal information.
+          </p>
+          <h4>1. Information Collection:</h4>
+          <p>
+            Our website does not use cookies or any other tracking technologies
+            to collect information about your visit or your interactions with
+            our site. We do not collect any personal information such as your
+            name, email address, or any other identifying details.
+          </p>
+          <h4>2. Information Usage:</h4>
+          <p>
+            Since we do not collect any information from our visitors, we do not
+            use any collected information for any purpose.
+          </p>
+          <h4>3. Information Disclosure:</h4>
+          <p>
+            As we do not collect any information from our visitors, we do not
+            disclose any information to third parties.
+          </p>
+          <h4>4. External Links:</h4>
+          <p>
+            Our website may contain links to external websites that are not
+            operated or controlled by us. Please note that we are not
+            responsible for the privacy practices of these third-party websites.
+            We encourage you to review their respective privacy policies upon
+            visiting them.
+          </p>
+          <h4>5. Children's Privacy:</h4>
+          <p>
+            Our website is not directed towards children under the age of 13,
+            and we do not knowingly collect any personal information from
+            individuals under 13 years of age. If you are a parent or guardian
+            and believe that your child has provided any personal information on
+            our website, please contact us, and we will promptly delete that
+            information.
+          </p>
+          <h4>6. Changes to the Privacy Policy:</h4>
+          <p>
+            We reserve the right to modify or update this Privacy Policy at any
+            time. Any changes will be effective immediately upon posting the
+            revised Privacy Policy on our website. We encourage you to review
+            this Privacy Policy periodically for any updates.
+          </p>
+          <h4>7. Contact Us:</h4>
+          <p>
+            If you have any questions or concerns about this Privacy Policy or
+            our practices regarding your personal information, please contact us
+            using the contact information provided on our website. By using our
+            website, you signify your acceptance of this Privacy Policy. If you
+            do not Effective date: [Insert Date] At Kocoa Mania, we respect your
+            privacy agree to this policy, please refrain from using our website.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <!-- Mobile navigation -->
+    <div class="mobile-nav nav">
+      <a href="#home" title="Home" class="scrollTo">Home</a>
+      <a href="#categories" title="Products" class="scrollTo">Products</a>
+      <a href="#about" title="About Us" class="scrollTo">About Us</a>
+      <a href="#contact" title="Contact Us" class="scrollTo">Contact Us</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <!-- Logo -->
+        <a href="index.html" class="logo" title="Kocoa Mania">
+          <img src="dist/img/logo.png" alt="kocoamania" loading="lazy" />
+        </a>
+
+        <!-- Main navigation -->
+        <nav class="main-nav nav">
+          <ul role="list">
+            <li>
+              <a href="#home" title="Home" class="scrollTo active">Home</a>
+            </li>
+            <li>
+              <a href="#categories" title="Products" class="scrollTo"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a href="#about" title="About Us" class="scrollTo">About Us</a>
+            </li>
+            <li>
+              <a href="#contact" title="Contact Us" class="scrollTo"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Hamburger menu -->
+        <div class="hamburger">
+          <input type="checkbox" id="toggler" />
+          <label for="toggler" class="hamburger">
+            <span class="line"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Home -->
+      <section class="section home" id="home">
+        <!-- Showcase -->
+        <div class="showcase">
+          <div class="container">
+            <!-- showcase title -->
+            <div class="showcase-title text-center">
+              <h1 class="heading heading-primary text-white">
+                Creating <span class="text-larger"></span
+                ><span class="cursor">|</span>,<br />
+                One Slice at a Time
+              </h1>
+              <a
+                href="https://wa.me/919876543210"
+                class="btn btn-primary btn-red"
+                title="Order Now"
+              >
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Order Now
+              </a>
+              <a
+                href="products.html"
+                class="btn btn-primary btn-white"
+                title="Browse Cakes"
+              >
+                <i class="fab fa-safari"></i>
+                Browse Cakes
+              </a>
+            </div>
+
+            <!-- Showcase hero -->
+            <div class="showcase-hero">
+              <div class="swiper showcase-hero--slider">
+                <div class="swiper-wrapper">
+                  <figure class="swiper-slide">
+                    <img
+                      src="dist/img/products/product-1.jpg"
+                      alt="Product 1"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure class="swiper-slide">
+                    <img
+                      src="dist/img/products/product-2.jpg"
+                      alt="Product 2"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure class="swiper-slide">
+                    <img
+                      src="dist/img/products/product-3.jpg"
+                      alt="Product 3"
+                      loading="lazy"
+                    />
+                  </figure>
+                  <figure class="swiper-slide">
+                    <img
+                      src="dist/img/products/product-4.jpg"
+                      alt="Product 4"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
+                <div class="btn-swipe swiper-button-next">
+                  <i class="fas fa-chevron-circle-right"></i>
+                </div>
+                <div class="btn-swipe swiper-button-prev">
+                  <i class="fas fa-chevron-circle-left"></i>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product carousel -->
+        <div class="products products-carousel pt-7 pb-7">
+          <div class="container">
+            <div class="swiper carousel">
+              <div class="swiper-wrapper">
+                <figure class="swiper-slide card">
+                  <div class="card-image">
+                    <span class="new-label">New</span>
+                    <img
+                      src="dist/img/products/product-3.jpg"
+                      alt="Product 3"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="card-details">
+                    <div class="card-details--info">
+                      <h3>Taj Mahal Cake</h3>
+                    </div>
+                    <div class="card-details--button">
+                      <a href="https://wa.me/919876543210" title="What'sApp">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" title="Share">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <figure class="swiper-slide card">
+                  <div class="card-image">
+                    <span class="new-label">New</span>
+                    <img
+                      src="dist/img/products/product-4.jpg"
+                      alt="Product 4"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="card-details">
+                    <div class="card-details--info">
+                      <h3>Taj Mahal Cake</h3>
+                    </div>
+                    <div class="card-details--button">
+                      <a href="https://wa.me/919876543210" title="What'sApp">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" title="Share">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <figure class="swiper-slide card">
+                  <div class="card-image">
+                    <span class="new-label">New</span>
+                    <img
+                      src="dist/img/products/product-5.jpg"
+                      alt="Product 5"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="card-details">
+                    <div class="card-details--info">
+                      <h3>Taj Mahal Cake</h3>
+                    </div>
+                    <div class="card-details--button">
+                      <a href="https://wa.me/919876543210" title="What'sApp">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" title="Share">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <figure class="swiper-slide card">
+                  <div class="card-image">
+                    <img
+                      src="dist/img/products/product-6.jpg"
+                      alt="Product 6"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="card-details">
+                    <div class="card-details--info">
+                      <h3>Taj Mahal Cake</h3>
+                    </div>
+                    <div class="card-details--button">
+                      <a href="https://wa.me/919876543210" title="What'sApp">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" title="Share">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <figure class="swiper-slide card">
+                  <div class="card-image">
+                    <img
+                      src="dist/img/products/product-7.jpg"
+                      alt="Product 7"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="card-details">
+                    <div class="card-details--info">
+                      <h3>Taj Mahal Cake</h3>
+                    </div>
+                    <div class="card-details--button">
+                      <a href="https://wa.me/919876543210" title="What'sApp">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" title="Share">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <figure class="swiper-slide card">
+                  <div class="card-image">
+                    <img
+                      src="dist/img/products/product-1.jpg"
+                      alt="Product 8"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption class="card-details">
+                    <div class="card-details--info">
+                      <h3>Taj Mahal Cake</h3>
+                    </div>
+                    <div class="card-details--button">
+                      <a href="https://wa.me/919876543210" title="What'sApp">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                      </a>
+                      <a href="#" title="Share">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="btn-swipe swiper-button-next">
+                <i class="fas fa-chevron-circle-right"></i>
+              </div>
+              <div class="btn-swipe swiper-button-prev">
+                <i class="fas fa-chevron-circle-left"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories -->
+      <section class="section categories pt-7 pb-7" id="categories">
+        <h2 class="heading heading-secondary text-white">
+          Explore our Range of Confectionary
+        </h2>
+        <div class="container">
+          <div class="card card-red reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-1.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Birthday">Birthday</a>
+          </div>
+          <div class="card card-light-red reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-2.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Ceremony">Ceremony</a>
+          </div>
+          <div class="card card-light-grey reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-3.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Kids">Kids</a>
+          </div>
+          <div class="card card-light-brown reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-4.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Wedding">Wedding</a>
+          </div>
+          <div class="card card-light-brown reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-5.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Birthday">Birthday</a>
+          </div>
+          <div class="card card-light-grey reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-6.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Ceremony">Ceremony</a>
+          </div>
+          <div class="card card-light-red reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-7.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Kids">Kids</a>
+          </div>
+          <div class="card card-red reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-8.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Wedding">Wedding</a>
+          </div>
+          <div class="card card-red reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-9.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Birthday">Birthday</a>
+          </div>
+          <div class="card card-light-red reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-10.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Ceremony">Ceremony</a>
+          </div>
+          <div class="card card-light-grey reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-11.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Kids">Kids</a>
+          </div>
+          <div class="card card-light-brown reveal fade-left">
+            <div class="card-image">
+              <img src="dist/img/categories/category-12.jpg" alt="Product 5" />
+            </div>
+            <a href="#" title="Wedding">Wedding</a>
+          </div>
+        </div>
+        <div class="text-center pt-5">
+          <a
+            href="products.html"
+            title="View More"
+            class="btn btn-primary btn-red"
+          >
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> View More</a
+          >
+        </div>
+      </section>
+
+      <!-- About Us -->
+      <section class="section about" id="about">
+        <!-- Testimonials -->
+        <div class="about-testimonials text-center pt-7 pb-7" id="about">
+          <h2 class="heading heading-secondary text-red">
+            Customer Testimonials
+          </h2>
+          <div class="container reveal fade-right">
+            <div class="swiper testimonials">
+              <div class="swiper-wrapper">
+                <blockquote class="swiper-slide quote">
+                  <p>
+                    Ordered a poker chip shaped cake. It was amazing! <br />
+                    <span class="name">Rohan Jain</span>
+                  </p>
+                </blockquote>
+                <blockquote class="swiper-slide quote">
+                  <p>
+                    I got my birthday cake from here. It was really delicious
+                    <br />
+                    <span class="name">Sarah Williams</span>
+                  </p>
+                </blockquote>
+                <blockquote class="swiper-slide quote">
+                  <p>
+                    I tried their Cup Cakes. It was tasty <br />
+                    <span class="name">Rohan Jain</span>
+                  </p>
+                </blockquote>
+                <blockquote class="swiper-slide quote">
+                  <p>
+                    Ordered a poker chip shaped cake. It was amazing! <br />
+                    <span class="name">Rohan Jain</span>
+                  </p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About founder -->
+        <div class="about-founder pt-7 pb-7">
+          <h2 class="heading heading-secondary text-white">
+            About the Founder
+          </h2>
+          <div class="container reveal fade-left">
+            <div class="about-founder--image">
+              <img src="dist/img/about.jpeg" alt="About Us" loading="lazy" />
+            </div>
+            <article class="about-founder--text">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Aliquam, deserunt. Ipsum asperiores a cumque molestias quis,
+                nulla expedita illum repellat perspiciatis beatae! Sit, hic! Vel
+                quis expedita dolore aliquam saepe inventore sit optio,
+                consectetur officiis assumenda soluta odio omnis error
+                reiciendis excepturi nostrum possimus, deleniti doloremque totam
+                eveniet modi atque fuga libero ab! Corrupti, aut. Obcaecati,
+                sequi facere soluta consectetur nulla dolorum autem magni nemo.
+                Numquam autem beatae non officiis, nobis corporis hic tempora
+                enim quae ipsum explicabo, excepturi, totam ad accusamus
+                dolorum. Dicta sed, facere voluptatum,<br />
+
+                doloribus recusandae ipsam inventore dignissimos illo magni
+                animi consectetur nesciunt veniam rem explicabo aspernatur
+                quidem amet placeat veritatis assumenda pariatur. Deleniti ipsam
+                id eligendi accusantium consectetur quibusdam quia, sunt maxime
+                blanditiis ipsa culpa fugit quis iste minus sequi reprehenderit
+                quam corporis consequatur similique. Quibusdam consequuntur illo
+                totam repellendus neque officia suscipit. Fuga non asperiores
+                nemo deserunt esse aperiam<br />
+                fugit eos, sequi magni soluta officia neque rem enim maiores.
+                Provident sit sed facere sapiente, tempore ratione
+                exercitationem minima ex, quae delectus impedit iure fugiat
+                quisquam. Aut, hic? Suscipit odio ipsum natus laborum architecto
+                cumque esse praesentium voluptate maxime repudiandae, eum
+                nostrum magni! Eos fugiat tempore consectetur accusamus a
+                voluptas iure in distinctio veritatis laborum!
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact us -->
+      <section class="section contact pt-7 pb-7" id="contact">
+        <h2 class="heading heading-secondary text-red">Contact Us</h2>
+        <div class="container reveal fade-bottom">
+          <div class="top-row">
+            <!-- Course info -->
+            <article class="contact-course-info text-center">
+              <h3 class="heading heading-tertiary text-red pb-2">
+                Baking is fun with Kocoa Mania
+              </h3>
+              <h4 class="heading heading-tertiary text-red">Class Type A:</h4>
+              <p class="pb-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorem, voluptate esse repellendus nihil incidunt atque!
+              </p>
+              <h4 class="heading heading-tertiary text-red">Class Type B:</h4>
+              <p class="pb-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                quas sequi ut numquam, suscipit laboriosam?
+              </p>
+              <h4 class="heading heading-tertiary text-red">Class Type C:</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                quas sequi ut numquam, suscipit laboriosam?
+              </p>
+            </article>
+            <!-- Contact info -->
+            <div class="contact-info text-center">
+              <div>
+                <h4 class="heading heading-tertiary text-red">Phone</h4>
+                <a href="tel:+919876543210" title="Telephone">+91 9876543210</a>
+              </div>
+
+              <div>
+                <h4 class="heading heading-tertiary text-red">Email</h4>
+                <a href="mailto:kocoamania@gmail.com" title="Email Address"
+                  >kocoamania@gmail.com</a
+                >
+              </div>
+
+              <!-- Social icons -->
+              <div class="contact-info--social-icons">
+                <a href="#" title="Facebook" class="btn btn-secondary">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#" title="Instagram" class="btn btn-secondary">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://wa.me/919876543210"
+                  title="What'sApp"
+                  class="btn btn-secondary"
+                >
+                  <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center pt-5">
+            <h3 class="heading heading-tertiary text-red">
+              Delivery available 24/7 across kolkata
+            </h3>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer pt-3 pb-3">
+      <div class="container">
+        <!-- Footer logo -->
+        <div class="footer-logo">
+          <a href="index.html" class="logo" title="Kocoa Mania">
+            <img src="dist/img/logo.png" alt="kocoamania" loading="lazy" />
+          </a>
+        </div>
+        <div class="text-center">
+          <div class="footer-nav pb-2">
+            <a href="#home" title="Home" class="scrollTo">Home</a>
+            <a href="#categories" title="Products" class="scrollTo">Products</a>
+            <a href="#about" title="About Us" class="scrollTo">About Us</a>
+            <a href="#contact" title="Contact Us" class="scrollTo"
+              >Contact Us</a
+            >
+          </div>
+          <div class="copyright">
+            <p>
+              Copyright &copy; <span class="year"></span> All rights reserved. |
+              <a href="#" class="popup-show" title="Privacy policy"
+                >Privacy policy</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- FSSAI logo -->
+        <div class="footer-fssai-logo">
+          <a
+            href="certificate/REG-CERTIFICATE.pdf"
+            title="Kocoa Mania FSSAI Certificate"
+            target="_blank"
+          >
+            <img src="dist/img/logo-fssai.png" alt="FSSAI Certificate" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/ec5c855e8d.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="dist/js/main.js"></script>
+    <script src="dist/js/index.js"></script>
+    <script>
+      let textArr = ['Sweet Moments', 'Perfect days', 'Nice feelings'];
+    </script>
+  </body>
+</html>

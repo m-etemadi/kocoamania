@@ -1,0 +1,86 @@
+// Mobile navigation
+.hamburger {
+  cursor: pointer;
+  @include size($width: 3.5rem);
+  @include flex-center(center);
+  @include transition(transform, 0.5s);
+  transition-delay: 0.3s;
+
+  @include responsive(medium) {
+    display: none;
+  }
+
+  .line {
+    position: relative;
+    @include size(100%, 0.3rem);
+    background-color: $color-white;
+
+    &::before,
+    &::after {
+      content: '';
+      @include position(absolute, $left: 0);
+      @include size(100%, 0.3rem);
+      background-color: $color-white;
+      @include transition(transform, 0.3s);
+    }
+
+    &::before {
+      top: 1rem;
+    }
+
+    &::after {
+      top: -1rem;
+    }
+  }
+
+  #toggler {
+    display: none;
+
+    &:checked ~ label {
+      transform: rotate(-360deg);
+    }
+
+    &:checked ~ label .line {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  @include position(fixed, $right: -72%, $top: $header-height);
+  @include size(70%, 100%);
+  @include transition(right, 0.3s);
+  z-index: 7;
+  box-shadow: -0.5rem 0.1rem 1.5rem 0.1rem rgba($color-brown, 0.55);
+  background-color: $color-white;
+  padding: 2rem;
+
+  @include responsive(xsmall) {
+    right: -52%;
+    width: 50%;
+  }
+
+  @include responsive(medium) {
+    display: none;
+  }
+
+  a {
+    padding: 1.2rem 1rem;
+    color: inherit;
+    @include border-radius(0.5rem);
+  }
+
+  &-hidden {
+    right: 0;
+  }
+}

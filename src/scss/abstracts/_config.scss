@@ -1,0 +1,179 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Ysabeau:wght@100;200;300;400;500;600;700;800;900;1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+// Variables
+$font-primary: 'Quicksand', sans-serif;
+$font-secondary: 'Ysabeau', sans-serif;
+$font-tertiary: 'Caveat', cursive;
+$color-red: #b6244f;
+$color-red-light: #fbb7c0;
+$color-brown: #504746;
+$color-brown-light: #b89685;
+$color-grey-light: #bfada3;
+$color-white: #fff;
+$color-black: #000;
+$color-black-light: #282828;
+$site-width: 120rem;
+$header-height: 6.4rem;
+$card-gap: 1.5rem;
+$hero-img-width: 50rem;
+$hero-img-height: 32rem;
+$about-img-size: 20rem;
+$about-text-arrow-size: 5rem;
+$card-opacity: 0.75;
+$font-weights: (
+  'thin': 300,
+  'exlight': 400,
+  'light': 500,
+  'regular': 600,
+  'medium': 700,
+  'large': 800,
+  'exlarge': 900,
+  'black': 1000,
+);
+$bg-hero: url('../../dist/img/backgrounds/bg-hero.jpg');
+$bg-cake: url('../../dist/img/backgrounds/bg-cake.jpg');
+$bg-categories: url('../../dist/img/backgrounds/bg-categories.jpg');
+$bg-about: url('../../dist/img/backgrounds/bg-about.jpg');
+$bg-contact: url('../../dist/img/backgrounds/bg-contact.jpg');
+$gradient-bg: linear-gradient(
+  to bottom,
+  rgba($color-brown, 0.7),
+  rgba($color-brown, 0.7)
+);
+$product-gradient-bg: linear-gradient(-45deg, $color-brown, $color-red);
+
+// Spacing
+@each $abbr, $name in ('t': 'top', 'b': 'bottom') {
+  @for $i from 1 through 10 {
+    .p#{$abbr}-#{$i} {
+      padding-#{$name}: 1rem * $i;
+    }
+  }
+}
+
+// Mixins
+@mixin font($face: inherit, $size: 1.6rem) {
+  font-family: $face;
+  font-size: $size;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin flex-center($justify: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin flex-center-column($justify: center) {
+  @include flex-center($justify);
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin transition($property, $duration) {
+  transition: $property;
+  transition-duration: $duration;
+  transition-timing-function: ease-in-out;
+}
+
+@mixin scrollbar($bgcolor, $bghover) {
+  padding-right: 1rem;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+
+    &-track {
+      border-radius: 1rem;
+    }
+
+    &-thumb {
+      background-color: $bgcolor;
+      border-radius: 1rem;
+
+      &:hover {
+        background-color: $bghover;
+      }
+    }
+  }
+}
+
+@mixin arrow($color, $size, $orientation) {
+  width: 0;
+  height: 0;
+  @if $orientation == top {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $orientation == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if $orientation == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  } @else {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if ($breakpoint == xsmall) {
+    @media only screen and (min-width: 480px) {
+      @content;
+    }
+  } @else if ($breakpoint == small) {
+    @media only screen and (min-width: 640px) {
+      @content;
+    }
+  } @else if ($breakpoint == medium) {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if ($breakpoint == large) {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if ($breakpoint == xlarge) {
+    @media only screen and (min-width: 1280px) {
+      @content;
+    }
+  } @else {
+    @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
+  }
+}
