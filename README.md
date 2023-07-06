@@ -1,5 +1,7 @@
 # Kocoamania project
 
+Project link: https://kocoamania.com/
+
 Worked as the Frontend Developer on Kocoa Mania Project, a CakeShop based in Kolkata, India.
 
 - Tasks:
