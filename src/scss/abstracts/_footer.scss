@@ -38,7 +38,16 @@
   }
 
   // Fssai logo
-  &-fssai-logo {
-    width: 10rem;
+  &-other-logos {
+    @include flex-center(center);
+    gap: 1.5rem;
+
+    img {
+      width: 6.5rem;
+
+      &.fssai {
+        width: 10rem;
+      }
+    }
   }
 }

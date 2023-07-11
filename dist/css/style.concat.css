@@ -225,7 +225,9 @@ body {
     .btn-secondary:not(:last-child) {
       margin-right: 0.5rem; }
   .btn-swipe {
-    color: #b6244f !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: #fff !important;
     font-family: inherit;
     font-size: 3rem !important; }
     .btn-swipe::after {
@@ -550,17 +552,17 @@ body {
         row-gap: 0; } }
   .home .showcase-hero {
     width: 100%;
-    height: 32rem;
+    height: 35.2rem;
     border-radius: 2rem;
     box-shadow: 0 0.1rem 4rem 1rem rgba(40, 40, 40, 0.85);
     overflow: hidden; }
     @media only screen and (min-width: 640px) {
       .home .showcase-hero {
-        width: 50rem;
-        height: 32rem; } }
+        width: 45rem;
+        height: 35.2rem; } }
     .home .showcase-hero img {
       width: 100%;
-      height: 32rem;
+      height: 35.2rem;
       object-fit: cover; }
     .home .showcase-hero--slider .swiper-pagination-bullet {
       background-color: transparent !important;
@@ -874,12 +876,21 @@ body {
     position: absolute;
     top: 50%;
     right: -3rem;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    box-shadow: 0.75rem 0 0.5rem -0.2rem rgba(40, 40, 40, 0.5); }
+    .side-nav .nav-open .fa-arrow-right {
+      transform: rotate(0deg);
+      transition: transform;
+      transition-duration: 0.55s;
+      transition-timing-function: ease-in-out; }
+    .side-nav .nav-open .rotate {
+      transform: rotate(180deg);
+      transition: transform;
+      transition-duration: 0.55s;
+      transition-timing-function: ease-in-out; }
     @media only screen and (min-width: 1024px) {
       .side-nav .nav-open {
         display: none; } }
-    .side-nav .nav-open .rotate {
-      transform: rotate(180deg); }
 
 .product-gallery {
   position: fixed;
@@ -996,7 +1007,7 @@ body {
             flex: 0 0 calc(calc(100% / 4) - calc(1.5rem - calc(1.5rem / 4))); } }
 
 .product-details {
-  min-height: 100%;
+  min-height: 100vh;
   background: linear-gradient(-45deg, #504746, #b6244f); }
   .product-details-header {
     width: 100%;
@@ -1039,5 +1050,12 @@ body {
     @media only screen and (min-width: 480px) {
       .footer-nav a {
         padding: 0 1rem; } }
-  .footer-fssai-logo {
-    width: 10rem; }
+  .footer-other-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; }
+    .footer-other-logos img {
+      width: 6.5rem; }
+      .footer-other-logos img.fssai {
+        width: 10rem; }

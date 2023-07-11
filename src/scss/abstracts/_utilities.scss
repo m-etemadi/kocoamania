@@ -130,7 +130,9 @@
   }
 
   &-swipe {
-    color: $color-red !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: $color-white !important;
     @include font($size: 3rem !important);
 
     &::after {

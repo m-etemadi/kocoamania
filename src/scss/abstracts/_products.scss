@@ -109,13 +109,20 @@
     background-color: $color-white;
     @include position(absolute, $right: -3rem, $top: 50%);
     transform: translateY(-50%);
+    box-shadow: 0.75rem 0 0.5rem -0.2rem rgba($color-black-light, 0.5);
 
-    @include responsive(large) {
-      display: none;
+    .fa-arrow-right {
+      transform: rotate(0deg);
+      @include transition(transform, 0.55s);
     }
 
     .rotate {
       transform: rotate(180deg);
+      @include transition(transform, 0.55s);
+    }
+
+    @include responsive(large) {
+      display: none;
     }
   }
 }
