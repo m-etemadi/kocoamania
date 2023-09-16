@@ -1,0 +1,146 @@
+{
+  "products": [
+    {
+      "categoryName": "Kids Cakes",
+      "categoryColor": "red",
+      "categoryImage": "https://unsplash.com/photos/L88iz147ZFY/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIzMDQwfA&force=true&w=640",
+
+      "products": [
+        {
+          "id": 73930385,
+          "categoryName": "Kids Cakes",
+          "isNew": true,
+          "productName": "Kids Cake",
+          "productImage": "https://unsplash.com/photos/cK6ixOQx1fI/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIzMTU0fA&force=true&w=640"
+        },
+        {
+          "id": 61940580,
+          "categoryName": "Kids Cakes",
+          "isNew": false,
+          "productName": "Iron Man Cake",
+          "productImage": "https://unsplash.com/photos/p9ZCXvI9KWs/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIzMjcxfA&force=true&w=640"
+        }
+      ]
+    },
+    {
+      "categoryName": "Classic Cakes",
+      "categoryColor": "light-grey",
+      "categoryImage": "https://unsplash.com/photos/7G2B5hcFfGU/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjI1OTYyfA&force=true&w=640",
+
+      "products": [
+        {
+          "id": 13240789,
+          "categoryName": "Classic Cakes",
+          "isNew": true,
+          "productName": "Classic Cake",
+          "productImage": "https://unsplash.com/photos/4qoBGQD3bIw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIzNDc0fA&force=true&w=640"
+        }
+      ]
+    },
+    {
+      "categoryName": "Birthday Cakes",
+      "categoryColor": "light-red",
+      "categoryImage": "https://unsplash.com/photos/wUg4u1kKTXw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIzMTM0fA&force=true&w=640",
+
+      "products": [
+        {
+          "id": 6875865,
+          "categoryName": "Birthday Cakes",
+          "isNew": true,
+          "productName": "Birthday Cake",
+          "productImage": "https://unsplash.com/photos/LRIQuZyxKRM/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjI2MTM4fA&force=true&w=640"
+        }
+      ]
+    },
+    {
+      "categoryName": "Wedding Cakes",
+      "categoryColor": "light-brown",
+      "categoryImage": "https://unsplash.com/photos/7ePjhwxtxCU/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIzNTM0fA&force=true&w=640",
+
+      "products": [
+        {
+          "id": 475648787,
+          "categoryName": "Wedding Cakes",
+          "isNew": false,
+          "productName": "Wedding Cake",
+          "productImage": "https://unsplash.com/photos/s0WVwKuznz0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIzNTgxfA&force=true&w=640"
+        },
+        {
+          "id": 54786745,
+          "categoryName": "Wedding Cakes",
+          "isNew": true,
+          "productName": "Wedding Cake",
+          "productImage": "https://unsplash.com/photos/sCsjtUwN8LA/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjIxMjY1fA&force=true&w=640"
+        }
+      ]
+    },
+    {
+      "categoryName": "Foodie Cakes",
+      "categoryColor": "red",
+      "categoryImage": "https://unsplash.com/photos/6SHd7Q-l1UQ/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0ODIxNzczfA&force=true&w=640",
+
+      "products": [
+        {
+          "id": 456888,
+          "categoryName": "Foodie Cakes",
+          "isNew": true,
+          "productName": "Foodie Cake",
+          "productImage": "https://unsplash.com/photos/Nl8Oa6ZuNcA/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0ODIxODI3fA&force=true&w=640"
+        },
+        {
+          "id": 2323232,
+          "categoryName": "Foodie Cakes",
+          "isNew": true,
+          "productName": "Foodie Cake",
+          "productImage": "https://unsplash.com/photos/nXKWLn8y9qE/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0ODIxOTQwfA&force=true&w=640"
+        }
+      ]
+    }
+  ],
+  "aboutUs": [
+    {
+      "testimonials": [
+        {
+          "comment": "Their cakes are best in town!",
+          "fullName": "Sarah Williams"
+        },
+        {
+          "comment": "I got my birthday cake from here.",
+          "fullName": "Andrew Smith"
+        },
+        {
+          "comment": "Cup Cake was tasty.",
+          "fullName": "John Smith"
+        },
+        {
+          "comment": "They baked my wedding cake so delicious.",
+          "fullName": "Mark Doe"
+        }
+      ],
+
+      "image": "https://res.cloudinary.com/dfh7ilzko/image/upload/v1691106547/Founder_74181677d1.jpg",
+      "text": "Mrs. Rajshree Lodha, a name that resonates with the aroma of freshly baked delights, has carved an extraordinary path from being a dedicated home baker to a visionary entrepreneur, all while being rooted in the vibrant city of Kolkata. With a culinary odyssey spanning over a decade, Mrs. Lodha's expertise and unwavering commitment have not only delighted the taste buds of many but have also transformed her into an emblem of success in the world of baking and entrepreneurship. Through her skillful hands and enterprising spirit, she has not only baked cakes but has also sculpted a story of perseverance that continues to inspire budding bakers and aspiring entrepreneurs alike. Join us as we delve into the remarkable journey of Mrs. Rajshree Lodha, an epitome of excellence in the realm of baking turned business."
+    }
+  ],
+  "contactUs": [
+    {
+      "phone": "+91 9876543210",
+      "email": "kocoamania@gmail.com",
+
+      "classes": [
+        {
+          "type": "A",
+          "text": "Learn the basics of baking a cake from scratch!"
+        },
+        {
+          "type": "B",
+          "text": "Learn baking and designing cakes professionally"
+        },
+        {
+          "type": "C",
+          "text": "A complete workshop with professional help from the masters of art in the hands on Advanced class. Mark your journey from being just a baker to being an entrepreneur."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+// Container
+.container {
+  position: relative;
+  max-width: $site-width;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0 auto;
+
+  @include responsive(small) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+// Overlay
+.overlay {
+  @include position(fixed, $left: 0, $top: 0);
+  z-index: 10;
+  background-color: rgba($color-black, 0.6);
+  @include size($width: 100%);
+  @include flex-center(center);
+  backdrop-filter: blur(0.3rem);
+  padding: 0 1.5rem;
+
+  // Popup
+  .popup {
+    position: relative;
+    width: calc(#{$site-width} / 2);
+    height: 80vh;
+    padding: 3rem;
+    background-color: $color-white;
+    @include border-radius(1rem);
+
+    // Close popup
+    &-close {
+      @include position(absolute, $top: 2rem, $right: 2rem);
+      line-height: 0.5;
+      font-size: 5rem;
+      color: $color-black-light;
+    }
+
+    // Popup text
+    &-text {
+      height: 90%;
+      overflow-y: auto;
+      @include scrollbar($color-black-light, $color-black);
+
+      h4 {
+        margin-bottom: 1.2rem;
+      }
+      p:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &.popup-hidden {
+    display: none;
+  }
+}
+
+// Naviagtion
+.nav a {
+  display: block;
+  text-transform: capitalize;
+  @include transition(all, 0.3s);
+
+  &:hover,
+  &.active {
+    color: $color-white;
+    background-color: $color-red;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-transform: capitalize;
+  white-space: nowrap;
+
+  &-red {
+    color: $color-white;
+    background-color: $color-red;
+  }
+
+  &-white {
+    color: $color-red;
+    background-color: $color-white;
+  }
+
+  &-primary {
+    padding: 1.2rem 1.5rem;
+    @include border-radius(0.5rem);
+    @include transition(all, 0.5s);
+
+    i {
+      margin-right: 0.5rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+
+      @include responsive(xsmall) {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-secondary {
+    @include font($size: 3rem);
+    @include size(4.5rem);
+    @include border-radius(50%);
+    color: $color-white;
+    background-color: $color-red;
+    @include transition(all, 0.2s);
+    -webkit-box-reflect: below 0
+      linear-gradient(to bottom, rgba($color-black, 0), rgba($color-black, 0.4));
+
+    &:hover {
+      color: $color-brown;
+      background-color: $color-red-light;
+      transform: translateY(-0.7rem);
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-swipe {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: $color-white !important;
+    @include font($size: 3rem !important);
+
+    &::after {
+      display: none;
+      font-size: 0;
+    }
+  }
+}
+
+// Headings
+.heading {
+  text-align: center;
+  line-height: 1.3;
+  text-transform: capitalize;
+
+  &-primary {
+    @include font($font-primary, 2.2rem);
+    font-weight: map-get($font-weights, 'medium');
+    margin-bottom: 3rem;
+
+    @include responsive(xsmall) {
+      font-size: 2.7rem;
+    }
+
+    @include responsive(large) {
+      font-size: 3.2rem;
+      margin-bottom: 5rem;
+    }
+
+    @include responsive(xlarge) {
+      font-size: 4.5rem;
+    }
+  }
+
+  &-secondary {
+    @include font($font-secondary, 3.2rem);
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+    font-weight: map-get($font-weights, 'large');
+
+    @include responsive(medium) {
+      font-size: 4.2rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &-tertiary {
+    @include font($size: 2.4rem);
+    font-weight: map-get($font-weights, 'medium');
+    margin-bottom: 1.2rem;
+  }
+}
+
+// Text
+.text {
+  &-center {
+    text-align: center;
+  }
+
+  &-larger {
+    @include font($font-tertiary, 2.5rem);
+    font-weight: map-get($font-weights, 'thin');
+    font-style: italic;
+
+    @include responsive(xsmall) {
+      font-size: 3.2rem;
+      margin-bottom: 5rem;
+    }
+
+    @include responsive(large) {
+      font-size: 3.6rem;
+    }
+    @include responsive(xlarge) {
+      font-size: 5.5rem;
+    }
+  }
+
+  &-white {
+    color: $color-white;
+  }
+
+  &-red {
+    color: $color-red;
+  }
+}
+
+// Products card
+.products {
+  .card {
+    border: 0.1rem solid $color-red;
+    padding: 1rem;
+    background-color: $color-white;
+    @include border-radius(1rem);
+
+    &-image {
+      position: relative;
+      @include border-radius(1rem);
+      overflow: hidden;
+
+      .new-label {
+        @include position(absolute, $left: 0, $top: 0);
+        text-transform: capitalize;
+        padding: 0.7rem 1rem;
+        border-bottom-right-radius: 1rem;
+        color: $color-white;
+        background-color: $color-red;
+      }
+
+      img {
+        @include size(100%, 23rem);
+        object-fit: cover;
+      }
+    }
+
+    &-details {
+      margin-top: 1rem;
+      text-align: center;
+
+      &--info {
+        margin-bottom: 0.7rem;
+
+        h3 {
+          font-weight: map-get($font-weights, 'regular');
+          margin-bottom: 0.3rem;
+        }
+      }
+
+      &--button {
+        a {
+          color: $color-red;
+          @include font($size: 2.6rem);
+
+          i {
+            @include transition(all, 0.2s);
+          }
+
+          &:hover {
+            i {
+              transform: translateY(-0.5rem);
+              color: $color-brown;
+            }
+          }
+
+          &:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Reveal on scroll
+.reveal {
+  opacity: 0;
+  @include transition(all, 0.4s);
+
+  &.active {
+    opacity: 1;
+
+    &.fade-bottom {
+      animation: fade-bottom 0.5s ease-in;
+    }
+    &.fade-left {
+      animation: fade-left 0.5s ease-in;
+    }
+    &.fade-right {
+      animation: fade-right 0.5s ease-in;
+    }
+  }
+
+  @keyframes fade-bottom {
+    0% {
+      transform: translateY(5rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-left {
+    0% {
+      transform: translateX(-10rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-right {
+    0% {
+      transform: translateX(10rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+// Loader
+.loader-container {
+  position: fixed;
+  z-index: 11;
+  @include size(100%, 100vh);
+  @include flex-center(center);
+  background-color: rgba($color-black, 0.95);
+
+  .spinner {
+    @include border-radius(50%);
+    @include size(12rem);
+    animation: spin 0.75s linear infinite;
+    border-top: 1.6rem solid $color-red;
+    border-right: 1.6rem solid $color-red-light;
+    border-bottom: 1.6rem solid $color-brown;
+    border-left: 1.6rem solid $color-brown-light;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,53 @@
+// Footer
+.footer {
+  background-color: $color-brown;
+  color: $color-white;
+
+  a {
+    color: inherit;
+  }
+
+  .container {
+    @include flex-center(space-between);
+    flex-direction: column;
+    row-gap: 2.5rem;
+
+    @include responsive(large) {
+      row-gap: 0;
+      flex-direction: row;
+    }
+  }
+
+  // Footer logo
+  &-logo {
+    img {
+      width: 17rem;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  // Footer nav
+  &-nav {
+    a {
+      padding: 0 0.4rem;
+
+      @include responsive(xsmall) {
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  // Fssai logo
+  &-other-logos {
+    @include flex-center(center);
+    gap: 1.5rem;
+
+    img {
+      width: 6.5rem;
+
+      &.fssai {
+        width: 10rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,316 @@
+// Products
+// Wrapper
+.wrapper {
+  @include size($width: 100%);
+  position: relative;
+  overflow: hidden;
+
+  & > * {
+    height: 100%;
+    padding: 1.5rem;
+
+    @include responsive(small) {
+      padding: 2rem;
+    }
+  }
+}
+
+// Side Navigation
+.side-nav {
+  box-shadow: 1rem 0.1rem 1.5rem 0 rgba($color-brown, 0.55);
+  width: 70%;
+  background-color: $color-white;
+  @include position(fixed, $left: -70%, $top: 0);
+  z-index: 1;
+  @include transition(all, 0.3s);
+
+  @include responsive(xsmall) {
+    width: 40%;
+    left: -40%;
+  }
+
+  @include responsive(large) {
+    width: 20%;
+    left: 0;
+  }
+
+  &.nav-hidden {
+    left: 0;
+  }
+
+  a {
+    display: block;
+  }
+
+  .row-top {
+    height: 10rem;
+    margin-bottom: 5rem;
+
+    .logo {
+      width: 100%;
+      margin-bottom: 3rem;
+
+      @include responsive(medium) {
+        width: 21rem;
+      }
+
+      @include responsive(large) {
+        width: 100%;
+      }
+
+      @include responsive(xlarge) {
+        width: 21rem;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .row-bottom {
+    height: calc(100% - 15rem);
+    overflow: auto;
+    @include scrollbar($color-black-light, $color-black);
+
+    li {
+      a {
+        padding: 2rem;
+        @include font($size: 1.4rem);
+        text-align: center;
+        color: $color-white;
+        @include border-radius(0.5rem);
+        @include transition(all, 0.25s);
+        background-color: $color-red;
+
+        @include responsive(xlarge) {
+          padding: 3rem;
+          @include font($size: 1.6rem);
+        }
+
+        &:hover,
+        &.active {
+          color: inherit;
+          background-color: $color-red-light;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .nav-open {
+    display: block;
+    cursor: pointer;
+    padding: 1rem;
+    color: $color-black;
+    background-color: $color-white;
+    @include position(absolute, $right: -3rem, $top: 50%);
+    transform: translateY(-50%);
+    box-shadow: 0.75rem 0 0.5rem -0.2rem rgba($color-black-light, 0.5);
+
+    .fa-arrow-right {
+      transform: rotate(0deg);
+      @include transition(transform, 0.55s);
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+      @include transition(transform, 0.55s);
+    }
+
+    @include responsive(large) {
+      display: none;
+    }
+  }
+}
+
+// Product Gallery
+.product-gallery {
+  @include position(fixed, $right: 0, $top: 0);
+  width: 100%;
+  background: $product-gradient-bg;
+
+  @include responsive(large) {
+    width: 80%;
+  }
+
+  // Searchbar
+  .searchbar {
+    height: 9.6rem;
+    margin-bottom: 3rem;
+    row-gap: 0.6rem;
+    @include flex-center(center);
+    flex-direction: column;
+
+    @include responsive(small) {
+      flex-direction: row;
+      height: 5rem;
+      row-gap: 0;
+      column-gap: 0.6rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include responsive(medium) {
+      width: 70%;
+    }
+
+    input {
+      border: none;
+      @include border-radius(0.5rem);
+      padding: 1.5rem 2rem;
+    }
+
+    .searchbox {
+      position: relative;
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+
+      &-result {
+        @include position(absolute, $left: 50%, $top: 5rem);
+        transform: translateX(-50%);
+        @include border-radius(0.5rem);
+        box-shadow: 0.4rem 0.5rem 1.5rem -0.1rem rgba($color-black, 0.75);
+        z-index: 1;
+        width: 100%;
+        min-height: 2rem;
+        background-color: $color-white;
+        padding: 1.5rem;
+        display: none;
+
+        li {
+          padding: 1.5rem 0.7rem;
+
+          a {
+            color: inherit;
+            display: block;
+
+            &:hover {
+              color: $color-red;
+            }
+          }
+
+          &:not(:last-child) {
+            border-bottom: 0.1rem dotted $color-brown;
+          }
+        }
+
+        @include responsive(xlarge) {
+          width: 70%;
+        }
+      }
+    }
+
+    input[type='submit'] {
+      cursor: pointer;
+      width: 100%;
+      color: $color-white;
+      background-color: $color-brown-light;
+      @include transition(all, 0.25s);
+
+      &:hover {
+        background-color: $color-brown;
+      }
+
+      @include responsive(small) {
+        width: 15rem;
+      }
+    }
+  }
+
+  // Tab content
+  .tab-content {
+    height: calc(100% - 12.6rem);
+
+    @include responsive(small) {
+      height: calc(100% - 8rem);
+    }
+
+    // Tab item
+    .tab-item {
+      display: none;
+      height: 100%;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    // Products
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: $card-gap;
+      height: 100%;
+      overflow: auto;
+
+      @include scrollbar($color-white, $color-black-light);
+
+      // Card
+      .card {
+        flex: 0 0 100%;
+
+        @include responsive(medium) {
+          flex: 0 0
+            calc(calc(100% / 2) - calc(#{$card-gap} - calc(#{$card-gap} / 2)));
+        }
+
+        @include responsive(large) {
+          flex: 0 0
+            calc(calc(100% / 3) - calc(#{$card-gap} - calc(#{$card-gap} / 3)));
+        }
+
+        @include responsive(xlarge) {
+          flex: 0 0
+            calc(calc(100% / 4) - calc(#{$card-gap} - calc(#{$card-gap} / 4)));
+        }
+      }
+    }
+  }
+}
+
+// product details
+.product-details {
+  min-height: 100vh;
+  background: $product-gradient-bg;
+
+  // Product header
+  &-header {
+    width: 100%;
+    background-color: $color-brown;
+    box-shadow: 0 0.5rem 1.5rem 0 rgba($color-black-light, 0.5);
+    margin-bottom: 5rem;
+
+    // Logo
+    .logo {
+      display: inline-block;
+      img {
+        width: 21rem;
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  // Image
+  .container {
+    text-align: center;
+
+    figure {
+      img {
+        margin: 0 auto;
+        @include border-radius(2rem);
+      }
+
+      figcaption {
+        color: $color-white;
+      }
+    }
+  }
+}
