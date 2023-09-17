@@ -2,8 +2,8 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { AppProvider } from './contexts/AppContext';
 import { DEFAULT_CATEGORY } from './config/config';
 import HomePage from './pages/HomePage';
-import Products from './pages/Products/Products';
-import ProductList from './pages/Products/ProductsTab/ProductList';
+import Products from './pages/Products';
+import ProductList from './layout/Products/MainContent/ProductList';
 import ProductView from './pages/ProductView';
 
 function App() {
