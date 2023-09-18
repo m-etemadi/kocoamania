@@ -8,7 +8,6 @@ const AppContext = createContext();
 function AppProvider({ children }) {
   const { isLoading, startLoading, stopLoading } = useLoading();
   const [popupOpen, setPopupOpen] = useState(false);
-  const [error, setError] = useState(false);
   const [categories, setCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState([]);
   const [aboutUs, setAboutUs] = useState([]);
@@ -41,7 +40,7 @@ function AppProvider({ children }) {
       const data = await getJSON(`${BASE_URL}/products`);
       setCategories(data);
     } catch (err) {
-      setError(err.message);
+      alert(err.message);
     } finally {
       stopLoading();
     }
@@ -54,7 +53,7 @@ function AppProvider({ children }) {
       const data = await getJSON(`${BASE_URL}/aboutUs`);
       setAboutUs(data.at(0));
     } catch (err) {
-      setError(err.message);
+      alert(err.message);
     } finally {
       stopLoading();
     }
@@ -67,7 +66,7 @@ function AppProvider({ children }) {
       const data = await getJSON(`${BASE_URL}/contactUs`);
       setContactUs(data.at(0));
     } catch (err) {
-      setError(err.message);
+      alert(err.message);
     } finally {
       stopLoading();
     }
@@ -82,7 +81,7 @@ function AppProvider({ children }) {
       );
       setCurrentCategory(data);
     } catch (err) {
-      console.log(err.message);
+      alert(err.message);
     } finally {
       stopLoading();
     }
@@ -99,7 +98,6 @@ function AppProvider({ children }) {
       value={{
         scrolling,
         isLoading,
-        error,
         categories,
         currentCategory,
         newProducts,

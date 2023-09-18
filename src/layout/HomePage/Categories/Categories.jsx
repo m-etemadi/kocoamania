@@ -3,6 +3,7 @@ import { MAX_CATEGORIES } from '../../../config/config';
 import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import Message from '../../../components/Message';
 import Button from '../../../components/Button';
 import ContentSpinner from '../../../components/ContentSpinner';
 import CategoriesItem from './CategoriesItem';
@@ -17,6 +18,10 @@ function Categories() {
           Explore our Range of Confectionary
         </h2>
         <div className="container">
+          {!categories.length && (
+            <Message message="No categories are available to show!" />
+          )}
+
           {isLoading ? (
             <ContentSpinner />
           ) : (

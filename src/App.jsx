@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import Products from './pages/Products';
 import ProductList from './layout/Products/MainContent/ProductList';
 import ProductView from './pages/ProductView';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/products/:category" element={<ProductList />} />
             <Route path="/products/:category/:id" element={<ProductView />} />
           </Route>
-          <Route path="*" element={<p>Page NOT found!</p>} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </AppProvider>
     </BrowserRouter>

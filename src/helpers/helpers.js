@@ -8,7 +8,7 @@ function timeout(s) {
   });
 }
 
-async function getJSON(url, errorMsg = 'Data NOT found!') {
+async function getJSON(url, errorMsg = 'Something went wrong!') {
   const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
   const data = await res.json();
   if (!res.ok) throw new Error(`${errorMsg} (${res.status})`);

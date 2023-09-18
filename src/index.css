@@ -317,6 +317,9 @@ body ::selection {
   font-weight: 700;
   margin-bottom: 1.2rem;
 }
+.message {
+  text-align: center;
+}
 .text-center {
   text-align: center;
 }
@@ -325,6 +328,22 @@ body ::selection {
   font-size: 2.5rem;
   font-weight: 300;
   font-style: italic;
+}
+.not-found {
+  min-width: 28rem;
+  text-align: center;
+  margin: 5rem auto;
+}
+.not-found div {
+  margin: 6rem 0;
+}
+.not-found h1 {
+  margin-bottom: 2rem;
+  font-size: 8rem;
+  color: #b6244f;
+}
+.not-found h2 {
+  font-size: 3.2rem;
 }
 @media only screen and (min-width: 480px) {
   .text-larger {
