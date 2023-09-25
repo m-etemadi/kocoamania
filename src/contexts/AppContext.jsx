@@ -77,7 +77,7 @@ function AppProvider({ children }) {
 
     try {
       const data = await getJSON(
-        `${BASE_URL}/products?categoryName=${fixCategoryName(name)}`
+        `${BASE_URL}/products?${fixCategoryName(name)}`
       );
       setCurrentCategory(data);
     } catch (err) {
