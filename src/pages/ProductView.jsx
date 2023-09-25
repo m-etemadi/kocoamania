@@ -40,7 +40,7 @@ function ProductView() {
             .filter(item => item.id === Number(id))
             .map((item, i) => (
               <div key={i}>
-                <img src={item.productImage} alt="Product 1" />
+                <img src={item.productImage} alt={item.productName} />
                 <figcaption className="pt-2 pb-2">
                   <h2>{item.productName}</h2>
                 </figcaption>
