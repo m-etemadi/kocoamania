@@ -1,4 +1,4 @@
-import { useApp } from '../../../contexts/AppContext';
+import { useProducts } from '../../../contexts/ProductsContext';
 import { MAX_CATEGORIES } from '../../../config/config';
 import { Element } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +9,7 @@ import ContentSpinner from '../../../components/ContentSpinner';
 import CategoriesItem from './CategoriesItem';
 
 function Categories() {
-  const { isLoading, categories } = useApp();
+  const { isLoading, categories } = useProducts();
 
   return (
     <section>

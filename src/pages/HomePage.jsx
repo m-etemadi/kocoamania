@@ -1,4 +1,3 @@
-import MainSpinner from '../components/MainSpinner';
 import Popup from '../components/Popup';
 import MobileNav from '../layout/HomePage/MobileNav/MobileNav';
 import Header from '../layout/HomePage/Header/Header';
@@ -22,8 +21,6 @@ import Footer from '../layout/HomePage/Footer/Footer';
 function HomePage() {
   return (
     <>
-      <MainSpinner />
-      <Popup />
       <MobileNav />
       <Header>
         <Logo />
@@ -48,6 +45,7 @@ function HomePage() {
         </ContactUs>
       </MainContent>
       <Footer />
+      <Popup />
     </>
   );
 }

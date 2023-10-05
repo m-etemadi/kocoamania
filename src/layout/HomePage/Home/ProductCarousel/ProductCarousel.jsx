@@ -1,4 +1,4 @@
-import { useApp } from '../../../../contexts/AppContext';
+import { useProducts } from '../../../../contexts/ProductsContext';
 import {
   MAX_CAROUSEL,
   CAROUSEL_BREAKPOINTS,
@@ -11,7 +11,7 @@ import ProductCard from '../../../../components/ProductCard';
 import SwiperNavButtons from '../../../../components/SwiperNavButtons';
 
 function ProductCarousel() {
-  const { isLoading, newProducts } = useApp();
+  const { isLoading, newProducts } = useProducts();
 
   return (
     <div className="products products-carousel pt-7 pb-7">

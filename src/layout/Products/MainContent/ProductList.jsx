@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useApp } from '../../../contexts/AppContext';
+import { useProducts } from '../../../contexts/ProductsContext';
 import ProductCard from '../../../components/ProductCard';
 import ContentSpinner from '../../../components/ContentSpinner';
 
 function ProductList() {
   const { category } = useParams();
-  const { isLoading, getCategory, currentCategory } = useApp();
+  const { isLoading, getCategory, currentCategory } = useProducts();
 
   useEffect(() => {
     getCategory(category);
-  }, [category]);
+  }, [category, getCategory]);
 
   if (isLoading) return <ContentSpinner />;
   return (

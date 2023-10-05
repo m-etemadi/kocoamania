@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useApp } from '../contexts/AppContext';
+import { useProducts } from '../contexts/ProductsContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import { faArrowLeft, faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -10,14 +10,14 @@ import ContentSpinner from '../components/ContentSpinner';
 
 function ProductView() {
   const [isCopied, setIsCopied] = useState(false);
-  const { isLoading, getCategory, currentCategory } = useApp();
+  const { isLoading, getCategory, currentCategory } = useProducts();
 
   const { category, id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     getCategory(category);
-  }, [category]);
+  }, [category, getCategory]);
 
   function copyToClipboard() {
     const urlToCopy = window.location.href;

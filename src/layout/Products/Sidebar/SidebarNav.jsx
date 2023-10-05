@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { useApp } from '../../../contexts/AppContext';
+import { useProducts } from '../../../contexts/ProductsContext';
 import { fixCategoryLink } from '../../../helpers/helpers';
 
 function SidebarNav({ onSideNavToggle }) {
-  const { categories } = useApp();
+  const { categories } = useProducts();
 
   return (
     <ul className="tab-links" role="list">

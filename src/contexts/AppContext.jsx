@@ -1,15 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { BASE_URL } from '../config/config';
-import { fixCategoryName, getJSON } from '../helpers/helpers';
-import useLoading from '../hooks/useLoading';
+import { getJSON } from '../helpers/helpers';
 
 const AppContext = createContext();
 
 function AppProvider({ children }) {
-  const { isLoading, startLoading, stopLoading } = useLoading();
   const [popupOpen, setPopupOpen] = useState(false);
-  const [categories, setCategories] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState([]);
   const [aboutUs, setAboutUs] = useState([]);
   const [contactUs, setContactUs] = useState([]);
   const [scrolling, setScrolling] = useState(false);
@@ -22,10 +18,6 @@ function AppProvider({ children }) {
     setPopupOpen(open => !open);
   }
 
-  const newProducts = categories
-    .flatMap(category => category.products)
-    .filter(item => item.isNew === true);
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -33,62 +25,25 @@ function AppProvider({ children }) {
     };
   }, []);
 
-  async function fetchProducts() {
-    startLoading();
-
-    try {
-      const data = await getJSON(`${BASE_URL}/products`);
-      setCategories(data);
-    } catch (err) {
-      alert(err.message);
-    } finally {
-      stopLoading();
-    }
-  }
-
   async function fetchAboutUs() {
-    startLoading();
-
     try {
       const data = await getJSON(`${BASE_URL}/aboutUs`);
       setAboutUs(data.at(0));
     } catch (err) {
       alert(err.message);
-    } finally {
-      stopLoading();
     }
   }
 
   async function fetchContactUs() {
-    startLoading();
-
     try {
       const data = await getJSON(`${BASE_URL}/contactUs`);
       setContactUs(data.at(0));
     } catch (err) {
       alert(err.message);
-    } finally {
-      stopLoading();
-    }
-  }
-
-  async function getCategory(name) {
-    startLoading();
-
-    try {
-      const data = await getJSON(
-        `${BASE_URL}/products?categoryName=${fixCategoryName(name)}`
-      );
-      setCurrentCategory(data);
-    } catch (err) {
-      alert(err.message);
-    } finally {
-      stopLoading();
     }
   }
 
   useEffect(function () {
-    fetchProducts();
     fetchAboutUs();
     fetchContactUs();
   }, []);
@@ -97,15 +52,10 @@ function AppProvider({ children }) {
     <AppContext.Provider
       value={{
         scrolling,
-        isLoading,
-        categories,
-        currentCategory,
-        newProducts,
         popupOpen,
         onPopupToggle: handlePopupToggle,
         aboutUs,
         contactUs,
-        getCategory,
       }}
     >
       {children}

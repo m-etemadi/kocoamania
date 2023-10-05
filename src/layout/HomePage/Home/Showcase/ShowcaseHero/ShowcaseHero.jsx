@@ -1,4 +1,4 @@
-import { useApp } from '../../../../../contexts/AppContext';
+import { useProducts } from '../../../../../contexts/ProductsContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade } from 'swiper/modules';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -7,7 +7,7 @@ import ContentSpinner from '../../../../../components/ContentSpinner';
 import SwiperNavButtons from '../../../../../components/SwiperNavButtons';
 
 function ShowcaseHero() {
-  const { isLoading, newProducts } = useApp();
+  const { isLoading, newProducts } = useProducts();
 
   return (
     <div className="showcase-hero">
